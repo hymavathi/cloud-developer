@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf www/ || true",
-    "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..",
+    "clean": "rimraf www/ || true",
+    "build": "npm run clean && tsc && COPY package.json www/package.json & mkdir www\\tmp && cd C:\\Program Files\\7-Zip && 7z a C:\\UdacityNanoDegree\\Projects\\ImageFilterProject\\course-02\\project\\image-filter-starter-code\\www\\Archive.zip C:\\UdacityNanoDegree\\Projects\\ImageFilterProject\\course-02\\project\\image-filter-starter-code\\www\\",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts"
   },
   "repository": {
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "jimp": "^0.6.4"
+    "jimp": "^0.6.4",
+    "mkdirp": "^0.5.1"
   }
 }
