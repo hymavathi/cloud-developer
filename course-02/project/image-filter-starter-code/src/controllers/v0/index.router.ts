@@ -30,19 +30,16 @@ router.get('/filteredimage/',
     }
      const imgaeLocalPath = await Util.filterImageFromURL(image_url);
     var  files:Array<string> = [imgaeLocalPath];
-   
-   // res.on('end ',Util.deleteLocalFiles(files) );
-    res.sendFile(imgaeLocalPath);
-    res.on('finish', function() {
+ 
+    res.sendFile(imgaeLocalPath); // sends the image in the response.
+    res.on('finish', function() {//deletes the file from the server after sending the response
         try {
             Util.deleteLocalFiles(files);
         } catch(e) {
           console.log("error removing ", imgaeLocalPath); 
         }
     }); 
-   // Util.deleteLocalFiles(files);
-   // res.end();
-   
+ 
 });
 
 router.get('/', 

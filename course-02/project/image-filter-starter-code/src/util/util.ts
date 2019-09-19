@@ -10,11 +10,10 @@ import Jimp = require('jimp');
 //    an absolute path to a filtered image locally saved file
 export async function filterImageFromURL(inputURL: string): Promise<string>{
    console.log('entered util' + inputURL);
- //  const __dirname = "C:\UdacityNanoDegree\Projects\ImageFilterProject\course-02\project\image-filter-starter-code\src";
     return new Promise( async resolve => {
         const photo = await Jimp.read(inputURL);
         const outpath = '/tmp/filtered.'+Math.floor(Math.random() * 2000)+'.jpg';
-      await  photo
+      await   photo
             .resize(256, 256) // resize
             .quality(60) // set JPEG quality
             .greyscale() // set greyscale
