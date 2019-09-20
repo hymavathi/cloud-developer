@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
     "clean": "rimraf www/ || true",
-    "build": "npm run clean && tsc && COPY -rf src/config www/config && COPY .npmrc www/.npmrc && COPY package.json www/package.json & mkdir www\\tmp && cd C:\\Program Files\\7-Zip && 7z a C:\\UdacityNanoDegree\\Projects\\ImageFilterProject\\course-02\\project\\image-filter-starter-code\\www\\Archive.zip C:\\UdacityNanoDegree\\Projects\\ImageFilterProject\\course-02\\project\\image-filter-starter-code\\www\\",
+    "build": "npm run clean && tsc & copy src\\config www\\config & copy .npmrc www\\.npmrc & copy package.json www\\package.json & mkdir www\\tmp && cd C:\\Program Files\\7-Zip && 7z a C:\\UdacityNanoDegree\\Projects\\ImageFilterProject\\course-02\\project\\image-filter-starter-code\\www\\Archive.zip C:\\UdacityNanoDegree\\Projects\\ImageFilterProject\\course-02\\project\\image-filter-starter-code\\www\\ ",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts"
   },
   "repository": {
